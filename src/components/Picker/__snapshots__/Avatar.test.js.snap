@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing and match snapshoot 1`] = `
+<button
+  className="avatarButton false"
+  onClick={[Function]}
+>
+  <img
+    alt="Avatar 1"
+    className="avatar"
+    id="test"
+    src="images/avatar/avatar1.png"
+  />
+</button>
+`;

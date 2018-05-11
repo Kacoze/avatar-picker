@@ -1,0 +1,111 @@
+@import '~shared/styles/index.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$size: 60px;
+$space: 14px;
+$container: 282px;
+$arrow-size: 8px;
+$border-big: 3px;
+
+.Picker {
+  position: relative;
+}
+.avatarButton {
+  @include circle($size);
+  padding: 0;
+  border: none;
+  outline: 0;
+}
+
+.avatarButton:hover,
+.avatarButton:focus {
+  border: 1px solid $border-p;
+}
+
+
+.Popover {
+  position: absolute;
+  left: -$container / 2 + $space;
+  top: $size + $space;
+  background: $background;
+  box-shadow: 2px 2px 10px $shadow;
+  border-radius: 2px;
+  padding: $space;
+  width: $container;
+  text-align: center;
+}
+
+.Popover::before {
+  content: ' ';
+  position: absolute;
+	top: -$arrow-size;
+	left: $container/2 + $arrow-size;
+	border-left: $arrow-size solid transparent;
+	border-right: $arrow-size solid transparent;
+	border-bottom: $arrow-size solid $background;
+  @include sizing(0);
+}
+
+.PickerHeader{
+  font-family: 'Source Sans Pro';
+  color: $white;
+  size: $header;
+  margin: $space auto;
+}
+
+.avatar {
+  @include circle(100%);
+  padding: 0;
+  margin: 0;
+}
+
+.AvatarList {
+  display: flex;
+  flex-wrap: wrap;
+  .avatarButton {
+    z-index: $z-index-1;
+    margin: $space $space $space 0;
+    border: $border-big solid $background;
+  }
+  .avatarButton:nth-child(4n) {
+    margin-right: 0;
+  }
+  .avatarButton:hover,
+  .avatarButton:focus {
+    border: $border-big solid $border-p-o2;
+    .avatar {
+      background: $action;
+      opacity: $opacity;
+    }
+  }
+  .loading {
+    position: absolute;
+    display: inline-block;
+    @include circle($size);
+    border: $border-big solid $background;
+    animation: spin 0.75s infinite linear;
+    margin-left: -$size;
+    margin-top: -$border-big - $border-big;
+  }
+
+  .loadingButton {
+    border: $border-big solid $white;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading,
+  .loading::before,
+  .loading::after {
+    border-color: $action;
+    border-top-color: transparent;
+    animation-duration: 1.2s;
+  }
+}

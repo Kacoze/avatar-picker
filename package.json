@@ -1,0 +1,23 @@
+{
+  "name": "avatar-picker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@netguru/react-scripts": "2.0.2",
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-click-outside": "^3.0.1",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^3.1.3",
+    "react-test-renderer": "^16.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "eslint": "eslint \"src/**/*.js\""
+  }
+}
